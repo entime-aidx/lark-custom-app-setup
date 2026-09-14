@@ -35,7 +35,7 @@ which lark-cli && lark-cli --version
 ```json
 { "scopes": { "tenant": ["im:message:send_as_bot"], "user": ["docx:document:readonly"] } }
 ```
-リポジトリに `.claude/lark/scopes-sasahara.json` がある場合はその中身を貼る。
+この skill と同じフォルダの `scopes-larkapps-create.json` を Read して、その中身を貼る（mail 以外の12ドメイン分を収録済み）。
 貼ったら「Next, Review New Scopes」→ 内容確認 → 追加。
 
 JSON が無い場合は UI で追加: **Add permission scopes to app** → 左のモジュールを選び、

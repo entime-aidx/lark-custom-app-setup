@@ -58,6 +58,12 @@ Claude が STEP ごとに案内し、完了を確認してから次に進みま�
 | 5 | `lark-cli auth login`（user 身分で認可） | Claude / あなた |
 | 6 | 動作確認 | Claude |
 
+## 権限の一括インポート用 JSON
+
+[`skills/lark-custom-app-setup/scopes-larkapps-create.json`](skills/lark-custom-app-setup/scopes-larkapps-create.json) に、
+mail 以外の12ドメイン分のスコープを tenant / user の両方で収録しています。
+Developer Console の **Permissions & Scopes → Batch Actions → Batch import/export scopes → Import** に中身を貼り付けてください。
+
 ## 注意
 
 - **App Secret はチャットに貼らないでください。** STEP 4 の対話入力（stdin）でのみ渡します。
