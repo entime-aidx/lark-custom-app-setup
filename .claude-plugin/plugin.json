@@ -1,0 +1,12 @@
+{
+  "name": "lark-custom-app-setup",
+  "description": "笹原式で Lark カスタムアプリを作成し、lark-cli に登録して user 身分で認可する skill",
+  "version": "1.0.0",
+  "author": {
+    "name": "OFFICE PLATA"
+  },
+  "homepage": "https://github.com/OfficePlata/lark-custom-app-setup",
+  "repository": "https://github.com/OfficePlata/lark-custom-app-setup",
+  "license": "MIT",
+  "keywords": ["lark", "feishu", "lark-cli", "skill"]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "office-plata",
+  "description": "OFFICE PLATA が配布する Lark × Claude Code 用 skill",
+  "owner": {
+    "name": "OFFICE PLATA"
+  },
+  "plugins": [
+    {
+      "name": "lark-custom-app-setup",
+      "source": "./",
+      "description": "笹原式で Lark カスタムアプリを作成し、lark-cli に登録して user 身分で認可する skill",
+      "version": "1.0.0"
+    }
+  ]
+}
