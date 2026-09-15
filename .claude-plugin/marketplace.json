@@ -1,15 +1,15 @@
 {
-  "name": "office-plata",
-  "description": "OFFICE PLATA が配布する Lark × Claude Code 用 skill",
+  "name": "entime-training",
+  "description": "Entime研修用 Lark CLI 導入・認証・共同編集ガイド",
   "owner": {
-    "name": "OFFICE PLATA"
+    "name": "Entime"
   },
   "plugins": [
     {
       "name": "lark-custom-app-setup",
       "source": "./",
-      "description": "笹原式で Lark カスタムアプリを作成し、lark-cli に登録して user 身分で認可する skill",
-      "version": "1.0.0"
+      "description": "Windows/Macの準備からLark認証・Base共同編集まで案内",
+      "version": "1.1.0"
     }
   ]
 }

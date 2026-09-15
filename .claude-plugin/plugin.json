@@ -1,12 +1,17 @@
 {
   "name": "lark-custom-app-setup",
-  "description": "笹原式で Lark カスタムアプリを作成し、lark-cli に登録して user 身分で認可する skill",
-  "version": "1.0.0",
+  "description": "OFFICE PLATA原作をもとにしたEntime研修用Windows/Macセットアップ",
+  "version": "1.1.0",
   "author": {
-    "name": "OFFICE PLATA"
+    "name": "Entime"
   },
-  "homepage": "https://github.com/OfficePlata/lark-custom-app-setup",
-  "repository": "https://github.com/OfficePlata/lark-custom-app-setup",
+  "homepage": "https://github.com/entime-aidx/lark-custom-app-setup",
+  "repository": "https://github.com/entime-aidx/lark-custom-app-setup",
   "license": "MIT",
-  "keywords": ["lark", "feishu", "lark-cli", "skill"]
+  "keywords": [
+    "lark",
+    "feishu",
+    "lark-cli",
+    "skill"
+  ]
 }

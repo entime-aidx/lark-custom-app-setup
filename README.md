@@ -1,74 +1,62 @@
-# lark-custom-app-setup
+# Lark CLI 研修セットアップ — Entime fork
 
-笹原式で **Lark カスタムアプリを新規作成 → lark-cli に登録 → user 身分で認可** まで進める Claude Code 用 skill です。
+Windows・Macで必要ソフトの準備から、Lark認証、Base共同編集の確認まで進めるClaude Code用スキルです。
+[OFFICE PLATAの原作](https://github.com/OfficePlata/lark-custom-app-setup)をMITライセンスでforkしています。原作者の著作権表示はLICENSEに保持しています。
 
-- 権限は「mail 以外の12ドメイン」をまとめて付与
-- App Secret を画面・ログ・チャットに出さない登録手順
-- 「Permission denied」「bot だと空が返る」など、つまずきポイントの対処表つき
+**PCへの導入だけでは完了しません。会社のアプリ承認・本人の認証・対象Baseの編集権限も必要です。**
 
-## 前提
+## 最初に選ぶ
 
-- [Claude Code](https://claude.com/claude-code)
-- [lark-cli](https://github.com/larksuite/cli)（`lark-cli --version` が通ること）
-- Lark（または Feishu）テナントでカスタムアプリを作成・公開申請できる権限
+| 利用環境 | 手順 |
+|---|---|
+| Windows 11 / Windows 10 1809以降、x64・ARM64 | [Windows導入](skills/lark-custom-app-setup/references/windows.md) |
+| macOS 13以降、Intel・Apple Silicon | [Mac導入](skills/lark-custom-app-setup/references/macos.md) |
+| Linux / WSL / Chromebook | [対応条件と検証状況](docs/compatibility.md) |
+| 必要ソフトが導入済み | [Lark接続と権限](skills/lark-custom-app-setup/references/connect.md) |
+| 接続済み | [Base読取・書込・共同編集の確認](skills/lark-custom-app-setup/references/verify.md) |
+| 途中で止まった | [トラブル対応](skills/lark-custom-app-setup/references/troubleshooting.md) |
+| 講師・運営 | [研修での進め方](docs/training.md) |
 
-## インストール
+これはワンクリックで全権限を付けるインストーラーではありません。導入コマンドは人が実行し、事前チェックはソフトの有無を調べるだけです。
+Claude Codeには対応する契約/API利用環境が必要です。CLIを直接使う場合、Claude Codeは不要ですが、このスキルによる案内は使いません。
 
-### A. プラグインとして入れる（推奨・更新が楽）
+## スキルを入れる（Claude Code導入後）
 
-Claude Code 内で:
+**Claude Codeの入力欄**で、1行ずつ実行します。PowerShellやGit Bashの通常プロンプトではありません。
 
+```text
+/plugin marketplace add entime-aidx/lark-custom-app-setup
+/plugin install lark-custom-app-setup@entime-training
 ```
-/plugin marketplace add OfficePlata/lark-custom-app-setup
-/plugin install lark-custom-app-setup@office-plata
+
+Claude Codeを再起動して、次を入力します。
+
+```text
+/lark-custom-app-setup 研修用Base操作 Windowsで事前チェックから案内して
 ```
 
-更新は `/plugin marketplace update office-plata`。
+更新は `/plugin marketplace update entime-training`。このforkのマーケットプレイス名は原作の `office-plata` と分けています。両方を入れて同名スキルが競合する場合は、Claude Codeの `/plugin` 画面で使用する版を選んでください。
 
-### B. skill フォルダを直接コピーする
+## 読み取り専用のPCチェック
+
+このリポジトリを取得したフォルダで実行します（Node.js 22以上を本研修の基準とします）。
 
 ```bash
-git clone https://github.com/OfficePlata/lark-custom-app-setup.git
-mkdir -p ~/.claude/skills
-cp -R lark-custom-app-setup/skills/lark-custom-app-setup ~/.claude/skills/
+node skills/lark-custom-app-setup/scripts/preflight.mjs
 ```
 
-特定のリポジトリだけで使う場合は `~/.claude/skills/` の代わりに `<repo>/.claude/skills/` に置きます。
+表示するのはOS/CPU/RAMとソフトのバージョン・不足項目です。認証状態・Secret・トークン・個人ファイルは読みません。通信・インストール・Larkへの書込も行いません。
+`PASS` はPCの前提確認のみ。会社の承認やBaseアクセス成功を意味しません。終了コードは0=PC前提OK、1=不足/未確認、2=使い方不正です。
+CLI直接操作のみの確認は `--cli-only`、機械可読出力は `--json`。
 
-## 使い方
+## 公開リポジトリに入れない情報
 
-Claude Code を再起動してから、どちらかで起動します。
+App Secret、認証コード、トークン、参加者名簿、顧客のBase URLや業務データは保存しません。演習URLは研修チャット等で個別に配布してください。`.gitignore`だけで秘密を防げるわけではありません。
 
-```
-/lark-custom-app-setup 営業管理Bot 営業チームのBASE操作用
-```
+## 検証と出典
 
-または自然文で「Lark のカスタムアプリを作って lark-cli に登録したい」と伝えると自動で発火します。
+[検証状況](docs/compatibility.md)に実機/自動テスト/未確認を分けて記載しています。Windows CIの成功はWindows実機でのLark認証成功ではありません。
 
-コンソール操作（アプリ作成・権限付与・バージョン公開）は API が無いため手作業です。
-Claude が STEP ごとに案内し、完了を確認してから次に進みます。
-
-| STEP | 内容 | 実施者 |
-|---|---|---|
-| 0 | lark-cli の導入確認 | Claude |
-| 1 | カスタムアプリ作成・App ID 取得 | あなた |
-| 2 | 権限付与（mail 以外の12ドメイン） | あなた |
-| 3 | バージョン作成・公開・管理者承認 | あなた |
-| 4 | `lark-cli config init`（Secret は stdin） | Claude / あなた |
-| 5 | `lark-cli auth login`（user 身分で認可） | Claude / あなた |
-| 6 | 動作確認 | Claude |
-
-## 権限の一括インポート用 JSON
-
-[`skills/lark-custom-app-setup/scopes-larkapps-create.json`](skills/lark-custom-app-setup/scopes-larkapps-create.json) に、
-mail 以外の12ドメイン分のスコープを tenant / user の両方で収録しています。
-Developer Console の **Permissions & Scopes → Batch Actions → Batch import/export scopes → Import** に中身を貼り付けてください。
-
-## 注意
-
-- **App Secret はチャットに貼らないでください。** STEP 4 の対話入力（stdin）でのみ渡します。
-- Lark 版テナントは `--brand lark` が必須です（既定は `feishu`）。
-
-## License
-
-MIT © OFFICE PLATA
+- [Lark CLI公式](https://github.com/larksuite/cli)
+- [Claude Code公式セットアップ](https://code.claude.com/docs/en/setup)
+- [変更点](CHANGELOG.md)

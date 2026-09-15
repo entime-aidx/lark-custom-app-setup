@@ -1,0 +1,17 @@
+name: Validate setup guides and preflight
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  preflight:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --test tests/preflight.test.mjs
+      - run: node tests/validate-content.mjs

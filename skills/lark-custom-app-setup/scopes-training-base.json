@@ -1,0 +1,17 @@
+{
+  "scopes": {
+    "tenant": [],
+    "user": [
+      "offline_access",
+      "base:app:read",
+      "base:app:create",
+      "base:table:read",
+      "base:table:create",
+      "base:field:read",
+      "base:field:create",
+      "base:record:read",
+      "base:record:create",
+      "base:record:update"
+    ]
+  }
+}
