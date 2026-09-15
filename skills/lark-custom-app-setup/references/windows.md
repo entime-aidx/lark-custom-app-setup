@@ -2,7 +2,11 @@
 
 Windows 11、またはWindows 10 1809以降のx64/ARM64が候補。32bitは対象外です。Claude Codeの要件はRAM 4GB以上。本研修のNode.js基準は22以上（CLI本体の最低要件とは別）。会社が許可するサポート中のOSを使用してください。
 
-## まとめて導入する（推奨）
+## いちばん手間の少ない始め方
+
+[PowerShellに貼るだけの入口](../../../docs/windows-quickstart.md)を使うと、ダウンロード・展開を自動で行えます。
+
+## ZIPからまとめて導入する
 
 **GitやNode.jsがなくても、ZIPから開始できます。**
 

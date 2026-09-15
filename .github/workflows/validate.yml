@@ -23,3 +23,7 @@ jobs:
         if: runner.os == 'Windows'
         shell: pwsh
         run: ./tests/setup-windows.test.ps1
+      - name: Download and verify pinned setup (no installation)
+        if: runner.os == 'Windows'
+        shell: powershell
+        run: ./scripts/start-windows.ps1 -PrepareOnly
