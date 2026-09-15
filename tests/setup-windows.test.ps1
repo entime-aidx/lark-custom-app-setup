@@ -30,4 +30,6 @@ Assert-True $failure 'Installer error must stop the step.'
 Assert-True ($script:InstallCalls -eq 1) 'Must not retry failed installers blindly.'
 Invoke-InstallStep ([pscustomobject]@{ Action = 'KEEP'; Label = 'Existing'; Version = '1.0.0' })
 Assert-True ($script:InstallCalls -eq 1) 'KEEP must not call installer.'
+# Clear the intentionally mocked failure code before the CI shell exits.
+$global:LASTEXITCODE = 0
 Write-Host 'Windows setup planning, existing-install protection, and fail-fast tests passed. No software installed.'
