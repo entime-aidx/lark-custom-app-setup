@@ -17,7 +17,7 @@ Windows・Macで必要ソフトの準備から、Lark認証、Base共同編集�
 | 途中で止まった | [トラブル対応](skills/lark-custom-app-setup/references/troubleshooting.md) |
 | 講師・運営 | [研修での進め方](docs/training.md) |
 
-これはワンクリックで全権限を付けるインストーラーではありません。導入コマンドは人が実行し、事前チェックはソフトの有無を調べるだけです。
+Windowsは[ZIPをダウンロード](https://github.com/entime-aidx/lark-custom-app-setup/archive/refs/heads/main.zip)して展開し、`setup-windows.cmd` からNode.js・Git・Claude Code・Lark CLIをまとめて導入できます（WinGet・会社の実行許可が必要）。実行予定を確認してINSTALLと入力すると開始します。既存ソフトを再利用し、古いNode.jsの無断更新や利用規約の自動承諾は行いません。認証やBase権限を一括で付けるものではありません。
 Claude Codeには対応する契約/API利用環境が必要です。CLIを直接使う場合、Claude Codeは不要ですが、このスキルによる案内は使いません。
 
 ## スキルを入れる（Claude Code導入後）

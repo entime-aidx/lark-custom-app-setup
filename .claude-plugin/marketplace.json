@@ -9,7 +9,7 @@
       "name": "lark-custom-app-setup",
       "source": "./",
       "description": "Windows/Macの準備からLark認証・Base共同編集まで案内",
-      "version": "1.1.1"
+      "version": "1.2.0"
     }
   ]
 }

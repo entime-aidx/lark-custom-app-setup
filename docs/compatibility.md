@@ -33,3 +33,9 @@ CI成功を実テナントの権限確認や研修全員の準備完了と同一
 - https://github.com/larksuite/cli/blob/main/scripts/install.js
 - https://code.claude.com/docs/en/setup
 - https://github.com/OfficePlata/lark-custom-app-setup
+
+## Windowsまとめて導入（1.2.0）
+
+`setup-windows.cmd` → `scripts/setup-windows.ps1` はWindows PowerShell 5.1以上を使い、WinGet（OpenJS.NodeJS.LTS / Git.Git / Anthropic.ClaudeCode）とnpm（@larksuite/cli）から導入します。既存ソフトの検出、古いNodeの停止、正確なpackage ID、インストーラーの失敗時停止をモックテストで確認します。テストはソフトを導入しません。既定のPowerShell実行ポリシーや社内制限により開始できないPCがあります。自動で制限解除しません。
+
+出典：[WinGet install](https://learn.microsoft.com/en-us/windows/package-manager/winget/install)、[WinGet公式パッケージ一覧](https://github.com/microsoft/winget-pkgs)、[Lark CLI npm package](https://www.npmjs.com/package/@larksuite/cli)。

@@ -15,3 +15,11 @@ jobs:
           node-version: '22'
       - run: node --test tests/preflight.test.mjs
       - run: node tests/validate-content.mjs
+      - name: Windows setup tests (mock installers, Windows PowerShell 5.1)
+        if: runner.os == 'Windows'
+        shell: powershell
+        run: ./tests/setup-windows.test.ps1
+      - name: Windows setup tests (mock installers, PowerShell 7)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: ./tests/setup-windows.test.ps1
