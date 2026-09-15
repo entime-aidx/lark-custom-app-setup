@@ -58,7 +58,7 @@ lark-cli --version
 /plugin install lark-custom-app-setup@entime-training
 ```
 
-再起動後、`/lark-custom-app-setup 研修用Base操作 Windowsで接続まで案内して` と入力します。
+再起動後、`/lark-custom-app-setup:lark-custom-app-setup 研修用Base操作 Windowsで接続まで案内して` と入力します。
 
 ## 6. PCチェック（任意の手動実行）
 

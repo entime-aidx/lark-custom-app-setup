@@ -32,7 +32,7 @@ Claude Codeには対応する契約/API利用環境が必要です。CLIを直�
 Claude Codeを再起動して、次を入力します。
 
 ```text
-/lark-custom-app-setup 研修用Base操作 Windowsで事前チェックから案内して
+/lark-custom-app-setup:lark-custom-app-setup 研修用Base操作 Windowsで事前チェックから案内して
 ```
 
 更新は `/plugin marketplace update entime-training`。このforkのマーケットプレイス名は原作の `office-plata` と分けています。両方を入れて同名スキルが競合する場合は、Claude Codeの `/plugin` 画面で使用する版を選んでください。

@@ -24,7 +24,7 @@ lark-cli --version
 /plugin install lark-custom-app-setup@entime-training
 ```
 
-再起動後 `/lark-custom-app-setup 研修用Base操作 Macで接続まで案内して` と入力します。Gitがない場合はプラグイン追加時のエラーに従って会社承認済みのGitを導入してください。警告や会社の制限を無効化して進めません。
+再起動後 `/lark-custom-app-setup:lark-custom-app-setup 研修用Base操作 Macで接続まで案内して` と入力します。Gitがない場合はプラグイン追加時のエラーに従って会社承認済みのGitを導入してください。警告や会社の制限を無効化して進めません。
 
 任意のPCチェックはREADMEの `node …/preflight.mjs` を、取得したリポジトリ内で実行します。Node/npm導入に `sudo` が必要と出た場合、まず利用者用の導入先と社内手順を確認し、既存の権限を一括変更しません。
 

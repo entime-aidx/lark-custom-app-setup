@@ -23,7 +23,7 @@ WindowsでBashが見つかってもGit Bash/WSLの取り違えは人が最終確
 ## 検証の区別
 
 - ローカル：macOSで既存CLI 1.0.92の起動とコマンドhelpを確認。新規インストール・権限変更は行っていない。
-- 自動：Node組込テストで不足ソフト・不対応CPU・古いOS・タイムアウト等の誤合格を確認。GitHub ActionsのLinux/Windows/macOSで実行する。結果はリポジトリのActionsを参照。
+- 自動：Node組込テストで不足ソフト・不対応CPU・古いOS・タイムアウト等の誤合格を確認。GitHub ActionsのLinux/Windows/macOSで実行する。[初回の3OSテストは成功](https://github.com/entime-aidx/lark-custom-app-setup/actions/runs/34971970619)。以降の結果はリポジトリのActionsを参照。
 - **未確認**：受講者のWindows/Macでの新規一気通貫導入、候補scopeセットの実テナント承認とBase書込、他テナントの認可、複数人の共同編集。
 
 CI成功を実テナントの権限確認や研修全員の準備完了と同一視しません。`--cli-only` はClaude/Git/Bash/RAM4GBの研修条件を省略するだけで、Lark APIの成功を保証しません。
