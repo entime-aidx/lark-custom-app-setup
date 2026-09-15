@@ -1,5 +1,7 @@
 # Windows：PowerShellに貼るだけで開始
 
+初めての方は、[受講者向けWindows導入手順書](windows-manual.md)から順番に進めてください。
+
 GitやNode.jsがないPCから始められます。ZIPの保存場所を探したり、手動で展開したりする必要はありません。
 
 1. スタートメニューで **Windows PowerShell** を検索して開きます。通常の権限で始めてください。

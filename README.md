@@ -5,6 +5,12 @@ Windows・Macで必要ソフトの準備から、Lark認証、Base共同編集�
 
 **PCへの導入だけでは完了しません。会社のアプリ承認・本人の認証・対象Baseの編集権限も必要です。**
 
+## 受講者向けの手順書
+
+**[Windows導入手順書を開く](docs/windows-manual.md)**
+
+準備するもの → ソフト一括導入 → Claude Code・Larkへの接続 → Base共同編集の確認まで、順番に進められます。
+
 ## Windowsは貼り付けだけで開始
 
 [PowerShell用の開始コマンドを開く](docs/windows-quickstart.md) → 枠内をまとめて貼り付ける → 導入予定を確認してINSTALL。ファイルの取得・検証・展開は自動です。
