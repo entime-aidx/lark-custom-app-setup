@@ -26,6 +26,6 @@ for (const scope of training.scopes.user) {
 }
 console.log('JSON, plugin metadata, local links and training scope checks passed.');
 
-const bootstrap = fs.readFileSync('scripts/start-windows.ps1', 'utf8');
-const quickstart = fs.readFileSync('docs/windows-quickstart.md', 'utf8');
+const bootstrap = fs.readFileSync('scripts/start-windows.ps1', 'utf8').replace(/\r\n/g, '\n');
+const quickstart = fs.readFileSync('docs/windows-quickstart.md', 'utf8').replace(/\r\n/g, '\n');
 assert.ok(quickstart.includes('```powershell\n& {\n' + bootstrap + '}\n```'), 'Copy/paste command must match the tested bootstrap');
